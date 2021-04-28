@@ -1,0 +1,155 @@
+.journal__main-content{
+    display: flex ;
+}
+.journal__sidebar{
+    background-color: $dark-grey;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 20vw;
+
+    
+    ::-webkit-scrollbar {
+        width: 10px;
+        cursor: pointer;
+  }
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+        border-radius: 12px;
+  }
+    ::-webkit-scrollbar-thumb {
+        background: #888; 
+        border-radius: 12px;
+  }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+  }
+}
+
+.journal__sidebar-navbar{
+    display: flex;
+    justify-content: space-between;
+    h3{
+        font-weight: lighter;
+    }
+}
+
+.journal__new-entry{
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+    transition: color .3s ease;
+
+    &:hover{
+        color:lighten($color: $primary, $amount: 20);
+    }
+}
+
+.journal__entires{
+
+    margin-top: 30px;
+    overflow-y: scroll ;
+    justify-content: center;
+}
+.journal__entry{
+    background-color: white;
+    border-radius: 12px;
+    color: $dark-grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    padding: 1rem;
+    transition: box-shadow .3s ease-in;
+    margin-right: 10px;
+    
+    
+
+    &:hover{
+        box-shadow: -1px -1px 1px black inset, -2px -1px 2px black inset, -1px -2px 3px black inset;
+    }
+}
+.journal__entry-picture{
+    height: 15vh;
+    width: 8rem;
+    border: 1px solid $primary;
+    box-shadow: 1px 1px 1px $dark-grey;
+    
+}
+
+.journal__entry-body{
+    
+    width: 10%;
+
+    
+}
+.journal__entry-title{
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 1rem;
+    width: 9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    
+}
+.journal__entry-content{
+    font-size: 0.9rem;
+    padding: 1rem;
+    margin-top: 2rem;
+    width: 8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+}
+.journal__entry-date-box{
+    
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px;
+    margin: 2rem;
+    span{
+        font-size: 12px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .journal__entry{
+        flex-direction: column;
+    }
+    .journal__sidebar{
+
+        width: 40vw;
+    }
+    .journal__entry-picture{
+
+        display: none;
+        
+    }
+    .journal__entry-title{
+        width: 7rem;
+        text-overflow: clip;
+        word-wrap:break-word;
+    }
+    .journal__entry-content{
+
+        width: 4rem;
+
+        
+    }
+
+}
